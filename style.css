@@ -1,4 +1,36 @@
-html {
-  height: 100%;
+/*base page css */
+#banner{
   width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url("Resrouces/IMG/BG.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+#header img{  
+  margin-top: 0.3em;
+  margin-left: 0.5em;
+  width: 4em;
+  height: 6em;
+}
+#header h1{
+  font-family:  "Oswald", sans-serif ;
+  color: #937c66;
+  margin: auto;
+  text-align: center;
+}
+#header span{
+}
+#header{
+  display: flex;
+  flex-direction: row;
+  height: 10em;
+  width: 100%;
+  background-color: rgba(0,0,0,0.15);
+}
+#header button{
+position: relative;
+  right: 2em ;
+  margin-top: 2em;
+  width: 3em;
+  height: 3em;
 }
