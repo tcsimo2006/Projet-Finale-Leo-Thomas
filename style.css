@@ -28,7 +28,9 @@
   background-color: rgba(0,0,0,0.4);
 }
 #header button{
-position: relative;
+  border-radius: 5px;
+  margin: 0.5em;
+  position: relative;
   right: 2em ;
   margin-top: 2em;
   width: 3em;
@@ -64,6 +66,9 @@ position: relative;
 #BreadMenu{
   background-image: url(Resrouces/IMG/Bread.jpg);
 }
-#BreadMenu:Hover{
-  
+#header a{
+  color: black;
+}
+.MenuDiv:Hover{
+  transform: scale(1.05);
 }
