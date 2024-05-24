@@ -24,27 +24,124 @@
       <button><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></button>
     </div>
     <div id="ClickableMain">
-      <div class="MenuDiv" id="BreadMenu">Pain </div>
-      <div class="MenuDiv" id="CakeMenu">Gateau </div>
+      <div class="MenuDiv" id="BreadMenu" onclick="openNav(`BreadSideNav`)"`)">Pain </div>
+      <div class="MenuDiv" id="CakeMenu" onclick="openNav(`CakeSideNav`)">Gateau </div>
       <div class="MenuDiv" id="PastryMenu">Pâtisserie </div>
       <div class="MenuDiv" id="SandMenu">Sandwichs </div>
       
+    </div>
+    <div id="BreadSideNav" class="sidenav">
+      <a class="XButton" onclick="closeNav(`BreadSideNav`)">X</a>
+      <div class="Menuitem">
+        <img class="Menuitemimg" src="Resrouces/IMG/Sourdough.gif" alt="Bread">
+        <p class="Menuitemname">Sourdough - 25$</p>
+        <input type="number" class="NumSelect" placeholder="0" min="0" max="9">
+        <button class="ButtonAddCart">Ajouter Au Cart</button>
+      </div>
+      
+      <div class="Menuitem">
+        <img class="Menuitemimg" src="Resrouces/IMG/Bagels.jpg" alt="Bread">
+        <p class="Menuitemname">Bagels (12) - 15.99$</p>
+        <input type="number" class="NumSelect" placeholder="0" min="0" max="9">
+        <button class="ButtonAddCart">Ajouter Au Cart</button>
+      </div>
+      <div class="Menuitem">
+        <img class="Menuitemimg" src="Resrouces/IMG/Bagueetes.jpeg" alt="Bread">
+        <p class="Menuitemname">Baguette - 13.99$</p>
+        <input type="number" class="NumSelect" placeholder="0" min="0" max="9">
+        <button class="ButtonAddCart">Ajouter Au Cart</button>
+      </div>
+      <div class="Menuitem">
+        <img class="Menuitemimg" src="Resrouces/IMG/Challah.jpg" alt="Bread">
+        <p class="Menuitemname">Challah - 32.99</p>
+        <input type="number" class="NumSelect" placeholder="0" min="0" max="9">
+        <button class="ButtonAddCart">Ajouter Au Cart</button>
+      </div>
+
+    </div>
+
+      
+      <div id="CakeSideNav" class="sidenav">
+        <a class="XButton" onclick="closeNav(`CakeSideNav`)">X</a>
+        <div class="Menuitem">
+          <img class="Menuitemimg" src="Resrouces/IMG/smith.jpg" alt="Bread">
+          <p class="Menuitemname">Smith Island Cake - 75$</p>
+          <input type="number" class="NumSelect" placeholder="0" min="0" max="9">
+          <button class="ButtonAddCart">Ajouter Au Cart</button>
+        </div>
+
+        <div class="Menuitem">
+          <img class="Menuitemimg" src="Resrouces/IMG/funfetti_cake_49993_16x9.jpg" alt="Bread">
+          <p class="Menuitemname">Funfetti Cake - 125$</p>
+          <input type="number" class="NumSelect" placeholder="0" min="0" max="9">
+          <button class="ButtonAddCart">Ajouter Au Cart</button>
+        </div>
+        <div class="Menuitem">
+          <img class="Menuitemimg" src="Resrouces/IMG/Red Velvet.jpeg" alt="Bread">
+          <p class="Menuitemname">Red Velvet Cake - 200$</p>
+          <input type="number" class="NumSelect" placeholder="0" min="0" max="9">
+          <button class="ButtonAddCart">Ajouter Au Cart</button>
+        </div>
+        <div class="Menuitem">
+          <img class="Menuitemimg" src="Resrouces/IMG/Flan.jpg" alt="Bread">
+          <p class="Menuitemname">Flan - 45$</p>
+          <input type="number" class="NumSelect" placeholder="0" min="0" max="9">
+          <button class="ButtonAddCart">Ajouter Au Cart</button>
+        </div>
+
     </div>
     <div id="story">
     <h1>Notre Histoire</h1>
     <p>C'est dans un coin pittoresque de la ville, au milieu des rues pavées et des jardins fleuris, que le rêve de Thomas et de Leo a germé. Forts de leur amour commun pour la pâtisserie et d'une amitié indéfectible forgée dans l'enfance, ils se sont engagés à ouvrir une boulangerie ensemble. Après des années de sauvegarde et de perfectionnement des recettes, Flourishing Bonds a ouvert ses portes, exhalant des odeurs de pain fraîchement cuit et de délices sucrés. Elle est rapidement devenue plus qu'une simple boulangerie, se transformant en un centre communautaire apprécié où les gens se rassemblent non seulement pour les friandises, mais aussi pour la chaleur de la camaraderie de Thomas et de Leo. </p>
       
       </div>
-    <div id="imgs">
-    <img src="Resrouces/IMG/Inside.jpg" alt="">
-    <img src="Resrouces/IMG/Inside 2.jpg" alt="">
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 4</div>
+        <img src="Resrouces/IMG/Inside.jpg" style="width:100%">
+        <div class="text">Nos Pâtisseries</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 4</div>
+        <img src="Resrouces/IMG/Inside 2.jpg" style="width:100%">
+        <div class="text">Biscuits et Friandises</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 4</div>
+        <img src="Resrouces/IMG/Inside 3.jpg" style="width:100%">
+        <div class="text">Notre Staff</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <img src="Resrouces/IMG/Inside 4.jpg" style="width:100%">
+        <div class="text">Chocolatines et Biscuits</div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+      
       </div>
   </div>
 
 </body>
+<script src="script.js"></script>
 
 
 
+
+
+  
 <footer>
   <div id="footer">
     <div class="footel" id="Contact">
@@ -74,6 +171,9 @@
     </div>
     <div class="footel" id="Legal">
       <h1>Legal</h1>
+      <a href="">Terms of Use</a>
+      <a href="">Privacy Policy</a>
+      <a href="">Cookies</a>
       
     </div>
   </div>
