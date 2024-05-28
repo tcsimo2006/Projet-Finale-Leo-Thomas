@@ -52,3 +52,20 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+.cart-h4{
+  color: white;
+}
+.CartImg{
+  width: 5em;
+  height: 4em;
+  margin-right: 3em;
+}
+.cart-h3{
+  color: white;
+  width: 5em;
+  text-align: center;
+}
+.Cardiv{
+  display: inline-flex;
+}
