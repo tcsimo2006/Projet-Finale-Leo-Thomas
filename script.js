@@ -1,3 +1,25 @@
+
+
+const { createClient } = supabase
+const supabaseUrl = 'https://rydwpjxlzndwuizciztd.supabase.co'
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5ZHdwanhsem5kd3VpemNpenRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY5MTc2MzAsImV4cCI6MjAzMjQ5MzYzMH0.4Dwu98uqKQwdw_TIYtPbYvT3i1P0jEcpy6wIocnKZfA"
+const client = createClient(supabaseUrl, supabaseKey)
+
+async function getCartData() {
+let { data, error } = await client
+  .from('Cart')
+  .select('*')
+console.log(data)
+}
+
+const { error } = await client
+  .from('Cart')
+  .insert([
+    { Product_id: 2, Quantity: 10 },
+  ])
+  .select()
+
+
 let BreadItems = [
     {
         index: 0,
