@@ -1,8 +1,9 @@
 /*base page css */
-#banner{
+#banner {
   width: 100%;
   height: 200vh;
-  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url("Resrouces/IMG/BG.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("Resrouces/IMG/BG.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -10,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
 }
-#header img{  
+#header img {
   margin-left: 1em;
   width: 4em;
   height: 6em;
@@ -27,20 +28,20 @@ body {
   flex-direction: row;
   height: 10em;
   width: 100%;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   justify-content: center;
   align-items: center;
 }
-#header button{
+#header button {
   border-radius: 5px;
   margin: 0.5em;
   position: relative;
-  right: 2em ;
+  right: 2em;
   margin-top: 2em;
   width: 3em;
   height: 3em;
 }
-.MenuDiv{
+.MenuDiv {
   display: inline-flex;
   width: 20em;
   padding-top: 5em;
@@ -49,61 +50,61 @@ body {
   justify-content: center;
   background-color: black;
   color: #ffffff;
-  font-family:  "Bodoni Moda", sans-serif ;
+  font-family: "Bodoni Moda", sans-serif;
   border-radius: 30px;
 }
-#Header a{
+#Header a {
   text-decoration: none;
 }
-#Header a:link{
+#Header a:link {
   color: black;
 }
-#Header a:visited{
+#Header a:visited {
   color: black;
 }
-#ClickableMain{
+#ClickableMain {
   margin-top: 4em;
   width: 100%;
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
 }
-#BreadMenu{
+#BreadMenu {
   background-size: cover;
   background-image: url(Resrouces/IMG/Bread.jpg);
 }
-#CakeMenu{
+#CakeMenu {
   background-size: cover;
   background-image: url(Resrouces/IMG/Cake.jpg);
 }
-#PastryMenu{
+#PastryMenu {
   background-size: cover;
   background-image: url(Resrouces/IMG/Rolls.jpg);
 }
-#SandMenu{
+#SandMenu {
   background-size: cover;
   background-image: url(Resrouces/IMG/Sammy.jpeg);
 }
-#header a{
+#header a {
   color: black;
 }
-.MenuDiv:Hover{
+.MenuDiv:hover {
   transform: scale(1.05);
 }
-#footer{
+#footer {
   color: #9e9e9e;
 }
-#footer{
+#footer {
   display: flex;
   flex-direction: row;
   background-color: #2b2b2b;
   width: 100%;
   height: 15em;
 }
-.footel{
+.footel {
   height: 15em;
   width: 25%;
 }
-#Social div{
+#Social div {
   width: 100%;
   height: 10em;
   display: flex;
@@ -118,46 +119,29 @@ body {
   text-decoration: none;
   border-radius: 50%;
 }
-#story{
+#story {
   position: relative;
   border-radius: 15px;
-  margin-top: 4em; 
-  padding: 2em; 
-  background-color:rgb(108, 106, 106,0.75) ;
-   -webkit-transition: background-color 0.5s ease-out;
-    -moz-transition: background-color 0.5s ease-out;
-    -o-transition: background-color 0.5s ease-out;
-    transition: background-color 0.5s ease-out;
+  margin-top: 4em;
+  padding: 2em;
+  background-color: rgb(108, 106, 106, 0.75);
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
 }
-#story:hover{
+#story:hover {
   backdrop-filter: blur(5px);
-  background-color:rgb(230, 230, 230,0.75) ;
+  background-color: rgb(230, 230, 230, 0.75);
 }
-body p{
-   font-family:  "Bodoni Moda", sans-serif ;
+body p {
+  font-family: "Bodoni Moda", sans-serif;
   font-size: calc(0.75vw + 0.75vh);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* {box-sizing:border-box}
+* {
+  box-sizing: border-box;
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -173,7 +157,8 @@ body p{
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -187,7 +172,7 @@ body p{
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
-.slideshow-container img{
+.slideshow-container img {
   width: 5em;
   height: 40em;
 }
@@ -197,11 +182,10 @@ body p{
   border-radius: 3px 0 0 3px;
 }
 
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
-
 
 .text {
   color: #f2f2f2;
@@ -234,7 +218,8 @@ body p{
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -244,10 +229,14 @@ body p{
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.sidenav{
+.sidenav {
   height: 100%;
   width: 0;
   z-index: 1;
@@ -261,7 +250,7 @@ body p{
   display: flex;
   flex-wrap: wrap;
 }
-.sidenav .XButton{
+.sidenav .XButton {
   color: white;
   position: absolute;
   top: 0;
@@ -269,14 +258,14 @@ body p{
   font-size: 36px;
   margin-left: 50px;
 }
-.Menuitem{
+.Menuitem {
   width: 20em;
-  height:15em;
+  height: 15em;
   margin-left: 5em;
   border-radius: 1em;
   background-color: #a8a3a3;
 }
-.Menuitemimg{
+.Menuitemimg {
   margin-left: 1em;
   margin-top: 1em;
   border-color: black;
@@ -284,11 +273,11 @@ body p{
   height: 7em;
   border-radius: 15px;
 }
-.Menuitemname{
+.Menuitemname {
   color: black;
   margin-left: 1em;
 }
-.ButtonAddCart{
+.ButtonAddCart {
   width: 10em;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -296,15 +285,14 @@ body p{
   border-color: black;
   float: right;
   margin-right: 2em;
-  margin-top: -1em ;
+  margin-top: -1em;
 }
-.NumSelect{
+.NumSelect {
   width: 3em;
   height: 2em;
   margin-left: 1em;
-  margin-top:-1em;
+  margin-top: -1em;
 }
-.footel a{
+.footel a {
   color: blue;
 }
-
