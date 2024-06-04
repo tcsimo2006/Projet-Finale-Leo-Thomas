@@ -1,3 +1,5 @@
+
+alert.title = "New Alert Title";
 let BreadItems = [
   {
       index: 0,
@@ -153,7 +155,7 @@ async function AddCart(group, ind){
   // let { data: Cart, error } = await client
   //   .from('Cart')
   //   .select('*')
-// iterate though data to see if its there 
+// iterate though data to see if its there already
   let { data, error } = await client
   .from('Cart')
   .insert([
@@ -164,7 +166,84 @@ async function AddCart(group, ind){
 }
 
 function LoadCart(){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let Signin = document.getElementById("in")
+Signin.addEventListener("click", CheckSignIn);
+let SignUp = document.getElementById("up")
+SignUp.addEventListener("click", CheckSignUp);
+async function CheckSignIn(){
+  let works = false;
+  let userinput = document.getElementById("email").value
+  let passinput = document.getElementById("password").value;
+  let CurrentUser
+  let { data, error } = await client
+  .from('Signin')
+  .select('*')
+    data.forEach((element) => {
+    console.log(element)
+
+    if(element.Username == userinput && element.Password == passinput)
+    {
+      CurrentUser = element.Username
+      alert("Welcome Back!");
+      window.location.href = "index.html";
+      works = true;
+    }
+  });
+  if (!works)
+    alert("Incorrect Username or Password");
+}
+
+
+async function CheckSignUp(){
+  let works = false;
+  let userinput = document.getElementById("email").value
+  let passinput = document.getElementById("password").value;
+  let CurrentUser
+  let { data, error } = await client
+  .from('Signin')
+  .select('*')
+    data.forEach((element) => {
+    console.log(element)
+
+    if(element.Username == userinput && element.Password == passinput)
+    {
+      works = true;
+      alert("Account With That User and Passwork Already Exists")
+      return
+    }
+  });
+  if (!works && userinput != "" && passinput != "")
+  {
+    alert("Thanks For Signing in")
+  CurrentUser = userinput
+  const { signup, error } = await client
+  .from('Signin')
+  .insert([
+        {Username: userinput, Password: passinput },
+      ])
+  .select()
+  works = true;
+  window.location.href = "index.html";
+  }
   
 }
+
+
 
 
