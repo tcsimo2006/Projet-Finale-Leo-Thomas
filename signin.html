@@ -10,13 +10,14 @@
 
   <body>
     <div id="banner">
+      <button id="out">Logout</Button>
       <div id="login">
         <img id="logo" src="Resrouces/IMG/Logo.png" alt="Logo" />
         <h1>Welcome!</h1>
         <input type="email" id="email" placeholder="Email" required />
         <input type="password" id="password" placeholder="Password" required />
-        <button id="in">Sign-in</button>
-         <button id="up">Sign-up</button>
+        <button id="in" onclick="CheckSignIn()">Sign-in</button>
+        <button id="up" onclick="CheckSignUp()">Sign-up</button>
       </div>
     </div>
   </body>

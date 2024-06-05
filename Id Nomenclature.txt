@@ -1,7 +1,0 @@
-Product ids will follow the formula:
-
-The number is determined by type and in order of product
-
-So sourdough is 0,0
-
-Flan is 1,3

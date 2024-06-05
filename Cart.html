@@ -10,11 +10,18 @@
   <body>
     <div id="banner">
       <img src="Resrouces/IMG/Logo.png" alt="" />
-      <div id="cart">
+      <div id="cartrec">
+        <div id="receipt" style="overflow-y:scroll";></div>
         <hr />
+        <div id="Money">
+        <p id=Soustotal>SousTotale: </p>
+        <p id=Tax>Tax: </p>
+        <p id=Total>Totale:</p>
+        </div>
       </div>
     </div>
   </body>
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="Backend.js"></script>
   <script src="cartscript.js"></script>
 </html>

@@ -1,249 +1,292 @@
-
+const { createClient } = supabase;
+const supabaseUrl = "https://rydwpjxlzndwuizciztd.supabase.co";
+const supabaseKey =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5ZHdwanhsem5kd3VpemNpenRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY5MTc2MzAsImV4cCI6MjAzMjQ5MzYzMH0.4Dwu98uqKQwdw_TIYtPbYvT3i1P0jEcpy6wIocnKZfA";
+const client = createClient(supabaseUrl, supabaseKey);
+let CurrentUser = localStorage.getItem("User");
 alert.title = "New Alert Title";
 let BreadItems = [
   {
-      index: 0,
-      quantity: 0,
-      nom: "Sourdough",
-      image:"Resrouces/IMG/Sourdough.gif",
-      prix: 25
+    index: "00",
+    quantity: 0,
+    nom: "Sourdough",
+    image: "Resrouces/IMG/Sourdough.gif",
+    prix: 25,
   },
   {
-      index: 1,
-      quantity: 0,
-      nom: 'Bagels',
-      image:"Resrouces/IMG/Bagels.jpg",
-      prix: 15.99
+    index: "01",
+    quantity: 0,
+    nom: "Bagels",
+    image: "Resrouces/IMG/Bagels.jpg",
+    prix: 15.99,
   },
   {
-      index: 2,
-      quantity: 0,
-      nom: 'Baguette',
-      image:"Resrouces/IMG/Bagueetes.jpeg",
-      prix: 13.99
+    index: "02",
+    quantity: 0,
+    nom: "Baguette",
+    image: "Resrouces/IMG/Bagueetes.jpeg",
+    prix: 13.99,
   },
   {
-      index: 3,
-      quantity: 0,
-      nom: 'Challah',
-      image:"Resrouces/IMG/Challah.jpg",
-      prix: 32.99
+    index: "03",
+    quantity: 0,
+    nom: "Challah",
+    image: "Resrouces/IMG/Challah.jpg",
+    prix: 32.99,
   },
-]
-let CakeItems =[
-{
-  index: 0,
-  quantity: 0,
-  nom: "Smith Island Cake",
-  image: "Resrouces/IMG/smith.jpg",
-  prix: 75
-},
-{
-  index: 1,
-  quantity: 0,
-  nom: 'Funfetti Cake',
-  image: "Resrouces/IMG/funfetti_cake_49993_16x9.jpg",
-  prix: 125
-},
-{
-  index: 2,
-  quantity: 0,
-  nom: 'Red Velvet Cake',
-  image: "Resrouces/IMG/Red Velvet.jpeg",
-  prix: 200
-},
-{
-  index: 3,
-  quantity: 0,
-  nom: 'Flan',
-  image: "Resrouces/IMG/Flan.jpg",
-  prix: 45
-},
-]
-let SandItems =[
-{
-  index: 0,
-  quantity: 0,
-  nom: "Ham And Cheese Sandwhich",
-  image: "Resrouces/IMG/HC.jpg",
-  prix: 12
-},
-{
-  index: 1,
-  quantity: 0,
-  nom: 'Steak Panini',
-  image: "Resrouces/IMG/SS.jpg",
-  prix: 15
-},
-{
-  index: 2,
-  quantity: 0,
-  nom: 'Caprese Panino',
-  image: "Resrouces/IMG/CS.jpg",
-  prix: 10
-},
-{
-  index: 3,
-  quantity: 0,
-  nom: 'Croque Monsieur',
-  image: "Resrouces/IMG/CM.jpg",
-  prix: 9
-},
-{
-  index: 4,
-  quantity: 0,
-  nom: 'Chicken Club',
-  image: "Resrouces/IMG/ClubS.jpg",
-  prix: 20
-},
-]
-let PastItems =[
-{
-  index: 0,
-  quantity: 0,
-  nom: "Croissant",
-  image: "Resrouces/IMG/Cross.jpg",
-  prix: 4
-},
-{
-  index: 1,
-  quantity: 0,
-  nom: 'New York Roll',
-  image: "Resrouces/IMG/NYC.jpg",
-  prix: 14
-},
-{
-  index: 2,
-  quantity: 0,
-  nom: 'Sugar Cookie',
-  image: "Resrouces/IMG/SC.jpg",
-  prix: 1.99
-},
-{
-  index: 3,
-  quantity: 0,
-  nom: 'Lemon Bars',
-  image: "Resrouces/IMG/LB.jpg",
-  prix: 2.99
-},
-]
-let items = [BreadItems, CakeItems, PastItems, SandItems]
-var Cart = []
-const { createClient } = supabase
-const supabaseUrl = 'https://rydwpjxlzndwuizciztd.supabase.co'
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5ZHdwanhsem5kd3VpemNpenRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY5MTc2MzAsImV4cCI6MjAzMjQ5MzYzMH0.4Dwu98uqKQwdw_TIYtPbYvT3i1P0jEcpy6wIocnKZfA"
-const client = createClient(supabaseUrl, supabaseKey)
+];
+let CakeItems = [
+  {
+    index: "10",
+    quantity: 0,
+    nom: "Smith Island Cake",
+    image: "Resrouces/IMG/smith.jpg",
+    prix: 75,
+  },
+  {
+    index: "11",
+    quantity: 0,
+    nom: "Funfetti Cake",
+    image: "Resrouces/IMG/funfetti_cake_49993_16x9.jpg",
+    prix: 125,
+  },
+  {
+    index: "12",
+    quantity: 0,
+    nom: "Red Velvet Cake",
+    image: "Resrouces/IMG/Red Velvet.jpeg",
+    prix: 200,
+  },
+  {
+    index: "13",
+    quantity: 0,
+    nom: "Flan",
+    image: "Resrouces/IMG/Flan.jpg",
+    prix: 45,
+  },
+];
+let PastItems = [
+  {
+    index: "20",
+    quantity: 0,
+    nom: "Croissant",
+    image: "Resrouces/IMG/Cross.jpg",
+    prix: 4,
+  },
+  {
+    index: "21",
+    quantity: 0,
+    nom: "New York Roll",
+    image: "Resrouces/IMG/NYC.jpg",
+    prix: 14,
+  },
+  {
+    index: "22",
+    quantity: 0,
+    nom: "Sugar Cookie",
+    image: "Resrouces/IMG/SC.jpg",
+    prix: 1.99,
+  },
+  {
+    index: "23",
+    quantity: 0,
+    nom: "Lemon Bars",
+    image: "Resrouces/IMG/LB.jpg",
+    prix: 2.99,
+  },
+];
+let SandItems = [
+  {
+    index: "30",
+    quantity: 0,
+    nom: "Ham And Cheese Sandwhich",
+    image: "Resrouces/IMG/HC.jpg",
+    prix: 12,
+  },
+  {
+    index: "31",
+    quantity: 0,
+    nom: "Steak Panini",
+    image: "Resrouces/IMG/SS.jpg",
+    prix: 15,
+  },
+  {
+    index: "32",
+    quantity: 0,
+    nom: "Caprese Panino",
+    image: "Resrouces/IMG/CS.jpg",
+    prix: 10,
+  },
+  {
+    index: "33",
+    quantity: 0,
+    nom: "Croque Monsieur",
+    image: "Resrouces/IMG/CM.jpg",
+    prix: 9,
+  },
+  {
+    index: "34",
+    quantity: 0,
+    nom: "Chicken Club",
+    image: "Resrouces/IMG/ClubS.jpg",
+    prix: 20,
+  },
+];
 
-// const response = await client 
-// .from('Cart')
-// .delete()
-// .eq('Quantity', 0)
-
-
-async function getCartData() {
-let { data, error } = await client
-  .from('Cart')
-  .select('*')
-console.log(data)
+let items = [BreadItems, CakeItems, PastItems, SandItems];
+let Cart = [];
+const buttons = document.querySelectorAll(".ButtonAddCart")
+buttons.forEach((button) =>{
+  button.Group = button.id.charAt(0)
+  button.Ind = button.id.charAt(1)
+  button.addEventListener("click", () => {AddCart(button.Group, button.Ind)})
+})
+async function AddCart(group, ind) {
   
+  if (CurrentUser == null) {
+    alert("Sign in to Add items")
+    window.location.href = "signin.html";
+  } else {
+    let { data, error } = await client.from("Signin").select("*");
+    data.forEach((user) => {
+      if (user.Username == CurrentUser && user.Items != null) {
+        Cart = JSON.parse(user.Items);
+        console.log(Cart);
+      }
+    });
+  }
+  items[group][ind].quantity = 1;
+  Cart.push(items[group][ind]);
+  console.log(Cart)
+  const { data, error } = await client
+    .from('Signin')
+    .update({ Items: JSON.stringify(Cart)})
+    .eq('Username', CurrentUser)
+    .select()
+  items[group][ind].quantity = 0;
+
 }
-getCartData()
-
-async function AddCart(group, ind){
-  items[group][ind].quantity ++;
-
-  // let { data: Cart, error } = await client
-  //   .from('Cart')
-  //   .select('*')
-// iterate though data to see if its there already
-  let { data, error } = await client
-  .from('Cart')
-  .insert([
-    { Product_id: ind, Product_type: group, Quantity: items[group][ind].quantity},
-  ])
-  .select()
-  
+if(window.location.href.endsWith("Cart.html")){
+  LoadCart();
 }
-
-function LoadCart(){
-
+async function LoadCart() {
+  if (CurrentUser == null) {
+    alert("Go Login")
+    window.location.href = "signin.html";
+  } else {
+    let { data, error } = await client.from("Signin").select("*");
+    data.forEach((user) => {
+      if (user.Username == CurrentUser && user.Items != null) {
+        Cart = JSON.parse(user.Items);
+      }
+    });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let Signin = document.getElementById("in")
+  let prixTotal = 0;
+  Cart.forEach(e => {
+      if (e.quantity !=0)
+          {
+              const CarDiv = document.createElement("div");
+                      CarDiv.setAttribute("class", "Cardiv")
+                      CarDiv.innerHTML = `
+                      <img src="${e.image}" class="CartImg" alt="...">
+                      <h4 class="cart-h3">${e.nom} ${e.prix}$</h4>
+                      <button class="CartButton" id="CartPlus" onclick ="PlusQuantity(${e.index})">+</button>
+                      <h4 class="cart-h3" id>${e.quantity}</h4>
+                      <button class="CartButton" id="CartMinus" onclick = "moinsQuantity(${e.index})">-</button>
+                      `
+                      receipt.appendChild(CarDiv)
+                      prixTotal += e.quantity * e.prix
+          }
+  })
+}
+let Signin = document.getElementById("in");
 Signin.addEventListener("click", CheckSignIn);
-let SignUp = document.getElementById("up")
+let SignUp = document.getElementById("up");
 SignUp.addEventListener("click", CheckSignUp);
-async function CheckSignIn(){
+async function CheckSignIn() {
   let works = false;
-  let userinput = document.getElementById("email").value
+  let userinput = document.getElementById("email").value;
   let passinput = document.getElementById("password").value;
-  let CurrentUser
-  let { data, error } = await client
-  .from('Signin')
-  .select('*')
-    data.forEach((element) => {
-    console.log(element)
-
-    if(element.Username == userinput && element.Password == passinput)
-    {
-      CurrentUser = element.Username
+  
+  let { data, error } = await client.from("Signin").select("*");
+  data.forEach((element) => {
+    console.log(element);
+    if (element.Username == userinput && element.Password == passinput) {
+      CurrentUser = element.Username;
+      localStorage.setItem("User", CurrentUser)
       alert("Welcome Back!");
       window.location.href = "index.html";
       works = true;
     }
   });
-  if (!works)
-    alert("Incorrect Username or Password");
+  if (!works) alert("Incorrect Username or Password");
 }
 
-
-async function CheckSignUp(){
+async function CheckSignUp() {
   let works = false;
-  let userinput = document.getElementById("email").value
+  let userinput = document.getElementById("email").value;
   let passinput = document.getElementById("password").value;
-  let CurrentUser
-  let { data, error } = await client
-  .from('Signin')
-  .select('*')
-    data.forEach((element) => {
-    console.log(element)
+  let { data, error } = await client.from("Signin").select("*");
+  data.forEach((element) => {
+    console.log(element);
 
-    if(element.Username == userinput && element.Password == passinput)
-    {
+    if (element.Username == userinput && element.Password == passinput) {
       works = true;
-      alert("Account With That User and Passwork Already Exists")
-      return
+      alert("Account With That User and Passwork Already Exists");
+      return;
     }
   });
-  if (!works && userinput != "" && passinput != "")
-  {
-    alert("Thanks For Signing in")
-  CurrentUser = userinput
-  const { signup, error } = await client
-  .from('Signin')
-  .insert([
-        {Username: userinput, Password: passinput },
-      ])
-  .select()
-  works = true;
-  window.location.href = "index.html";
+  if (!works && userinput != "" && passinput != "") {
+    alert("Thanks For Signing in");
+    CurrentUser = userinput;
+    localStorage.setItem("User", CurrentUser)
+    const { signup, error } = await client
+      .from("Signin")
+      .insert([{ Username: userinput, Password: passinput}])
+      .select();
+    works = true;
+    window.location.href = "index.html";
   }
-  
+}
+
+async function PlusQuantity(index){
+  Cart = JSON.parse(user.Items);
+  Cart.forEach((item) => {
+    if (item.index == index)
+      item.quantity++
+  })
+  const { data, error } = await client
+  .from('Signin')
+  .update({ Items: JSON.stringify(Cart)})
+  .eq('Username', CurrentUser)
+  .select()
+  LoadCart()
+}
+
+async function moinsQuantity(index){
+  Cart = JSON.parse(user.Items);
+  Cart.forEach((item) => {
+    if (item.index == index)
+      item.quantity--
+  })
+  const { data, error } = await client
+  .from('Signin')
+  .update({ Items: JSON.stringify(Cart)})
+  .eq('Username', CurrentUser)
+  .select()
+  LoadCart()
 }
 
 
 
 
+
+
+
+
+const logout = document.getElementById("out");
+logout.addEventListener("click", function signout(){
+  localStorage.removeItem("User");
+  alert("You have been signed out")
+  window.location.href = "index.html";
+})
