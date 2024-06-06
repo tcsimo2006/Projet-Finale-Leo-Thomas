@@ -170,6 +170,7 @@ if(window.location.href.endsWith("Cart.html")){
   LoadCart();
 }
 async function LoadCart() {
+  receipt.innerHTML = ""
   if (CurrentUser == null) {
     alert("Go Login")
     window.location.href = "signin.html";
@@ -185,28 +186,46 @@ async function LoadCart() {
   Cart.forEach(e => {
       if (e.quantity !=0)
           {
+            document.querySelectorAll(".CartPlus").forEach((button) => {
+              button.addEventListener("click", () => {});
+            })
+            document.querySelectorAll(".CartMinus").forEach((button) => {
+              button.addEventListener("click", () => {});
+            })
               const CarDiv = document.createElement("div");
                       CarDiv.setAttribute("class", "Cardiv")
                       CarDiv.innerHTML = `
                       <img src="${e.image}" class="CartImg" alt="...">
                       <h4 class="cart-h3">${e.nom} ${e.prix}$</h4>
-                      <button class="CartButton" id="CartPlus" onclick ="PlusQuantity(${e.index})">+</button>
+                      <button class="CartPlus" id="${e.index}">+</button>
                       <h4 class="cart-h3" id>${e.quantity}</h4>
-                      <button class="CartButton" id="CartMinus" onclick = "moinsQuantity(${e.index})">-</button>
+                      <button class="CartMinus" id="${e.index}">-</button>
                       `
                       receipt.appendChild(CarDiv)
                       prixTotal += e.quantity * e.prix
           }
+    
+  })
+document.getElementById("Soustotal").innerHTML = "Sous-Totale: " + prixTotal.toFixed(2).toString() + "$"
+  document.getElementById("Tax").innerHTML = "Taxe: " + (prixTotal * 0.13).toFixed(2).toString() + "$"
+  document.getElementById("Total").innerHTML = "Total: " + (prixTotal * 1.13).toFixed(2).toString() + "$"
+  document.querySelectorAll(".CartPlus").forEach((button) => {
+    button.addEventListener("click", () => {PlusQuantity(button.id)});
+  })
+  document.querySelectorAll(".CartMinus").forEach((button) => {
+    button.addEventListener("click", () => {moinsQuantity(button.id)});
   })
 }
+let userinput = document.getElementById("email").value;
+let passinput = document.getElementById("password").value;
 let Signin = document.getElementById("in");
 Signin.addEventListener("click", CheckSignIn);
 let SignUp = document.getElementById("up");
 SignUp.addEventListener("click", CheckSignUp);
 async function CheckSignIn() {
   let works = false;
-  let userinput = document.getElementById("email").value;
-  let passinput = document.getElementById("password").value;
+  userinput = document.getElementById("email").value;
+  passinput = document.getElementById("password").value;
   
   let { data, error } = await client.from("Signin").select("*");
   data.forEach((element) => {
@@ -221,11 +240,10 @@ async function CheckSignIn() {
   });
   if (!works) alert("Incorrect Username or Password");
 }
-
 async function CheckSignUp() {
   let works = false;
-  let userinput = document.getElementById("email").value;
-  let passinput = document.getElementById("password").value;
+  userinput = document.getElementById("email").value;
+  passinput = document.getElementById("password").value;
   let { data, error } = await client.from("Signin").select("*");
   data.forEach((element) => {
     console.log(element);
@@ -250,10 +268,12 @@ async function CheckSignUp() {
 }
 
 async function PlusQuantity(index){
-  Cart = JSON.parse(user.Items);
   Cart.forEach((item) => {
     if (item.index == index)
+    {
       item.quantity++
+    }
+      
   })
   const { data, error } = await client
   .from('Signin')
@@ -264,10 +284,12 @@ async function PlusQuantity(index){
 }
 
 async function moinsQuantity(index){
-  Cart = JSON.parse(user.Items);
   Cart.forEach((item) => {
     if (item.index == index)
+    {
       item.quantity--
+    }
+
   })
   const { data, error } = await client
   .from('Signin')
@@ -278,8 +300,14 @@ async function moinsQuantity(index){
 }
 
 
-
-
+let Uinput = document.getElementById("email")
+let pinput = document.getElementById("password")
+if(window.location.href.endsWith("signin.html") && CurrentUser!= null && userinput != null && passinput != null){
+  alert(CurrentUser)
+  Uinput.textContent = CurrentUser;
+  // Uinput.readOnly = true;
+  
+}
 
 
 
